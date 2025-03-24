@@ -1,0 +1,45 @@
+package day2;
+
+class LinkedList {
+	    static class Node {
+	        int data;
+	        Node next;	       
+	        Node(int data) {
+	            this.data = data;
+	            this.next = null;
+	        }
+	    }
+	    Node head;
+	    public void add(int data) {
+	        Node newNode = new Node(data);
+	        if (head == null) {
+	            head = newNode;
+	        } else {
+	            Node temp = head;
+	            while (temp.next != null) {
+	                temp = temp.next;
+	            }
+	            temp.next = newNode;
+	        }
+	    }
+	    public void findMiddle() {
+	        Node slow = head;
+	        Node fast = head;
+	        while (fast != null && fast.next != null) {
+	            slow = slow.next; 
+	            fast = fast.next.next;  
+	        }
+	        if (slow != null) {
+	            System.out.println("Middle element: " + slow.data);
+	        }
+	    }
+	    public static void main(String[] args) {
+	        LinkedList list = new LinkedList();	        
+	        list.add(11);
+	        list.add(22);
+	        list.add(36);
+	        list.add(44);
+	        list.add(55);
+	        list.findMiddle();
+	}
+}
