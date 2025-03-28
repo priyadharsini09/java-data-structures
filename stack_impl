@@ -1,0 +1,40 @@
+package sample2;
+
+public class Stack_impl {
+	int num[]=new int[6];
+	int top=-1;
+	public void push(int n)
+	{
+		++top;
+		num[top]=n;
+		public void push(int n)
+		{
+			if(top<num.length)
+			{
+				++top;
+				num[top]=n;
+			}
+			else
+			{
+				System.out.println("Stack overflow");
+		}
+		}
+		public void peek()
+		{
+			System.out.println("top value"+num[top]);
+		}
+			public void pop()
+			{
+				if(top!=-1)
+				{
+					System.out.println("popped out"+num[top]);
+					top--;
+				}
+				else
+				{
+					System.out.println("Stack underflow");
+				}
+			}
+		
+	
+}
